@@ -1,0 +1,30 @@
+﻿
+#carousel #owl-demo .item img {
+    height: auto;
+    width: 50%;
+    float: right;
+}
+.after{
+    position:relative;
+    float:right;
+    right:43%;
+    width:auto;
+}
+.after h2 , .before h2{
+    background: none repeat scroll 0 0 rgba(0, 30, 34, 0.85) !important;
+	color: #fff !important;
+	display: inline-block !important;
+    border-radius: 50%;
+	width: 100px;
+	height: 70px;
+}
+.before{
+    float:right;
+    width:auto;
+
+}
+section{
+    padding:100px;
+    text-align:right;
+    direction:rtl;
+}

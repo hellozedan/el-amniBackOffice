@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AfterBeforeImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="url_picture_before" Type="varchar" MaxLength="255" />
+          <Property Name="url_picture_after" Type="varchar" MaxLength="255" />
+          <Property Name="statuss" Type="bit" />
+          <Property Name="first_title" Type="varchar" MaxLength="255" />
+          <Property Name="secoundry_title" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ContactUs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="phone" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="messag" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="statuss" Type="bit" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="created_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CrashPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="messag" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="url_image_1" Type="nvarchar" MaxLength="255" />
+          <Property Name="url_image_2" Type="nvarchar" MaxLength="255" />
+          <Property Name="url_image_3" Type="nvarchar" MaxLength="255" />
+          <Property Name="statuss" Type="bit" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="created_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CursoleArticles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="subtitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="statuss" Type="bit" />
+        </EntityType>
+        <EntityType Name="GalleryImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" />
+          <Property Name="image_url" Type="nvarchar" MaxLength="500" />
+          <Property Name="statuss" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="AfterBeforeImage" EntityType="Self.AfterBeforeImage" Schema="el-amani" store:Type="Tables" />
+          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="el-amani" store:Type="Tables" />
+          <EntitySet Name="CrashPrice" EntityType="Self.CrashPrice" Schema="el-amani" store:Type="Tables" />
+          <EntitySet Name="CursoleArticles" EntityType="Self.CursoleArticles" Schema="el-amani" store:Type="Tables" />
+          <EntitySet Name="GalleryImage" EntityType="Self.GalleryImage" Schema="el-amani" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AfterBeforeImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="url_picture_before" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="url_picture_after" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="statuss" Type="Boolean" />
+          <Property Name="first_title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="secoundry_title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CursoleArticle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="subtitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="statuss" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AfterBeforeImages" EntityType="Self.AfterBeforeImage" />
+          <EntitySet Name="CursoleArticles" EntityType="Self.CursoleArticle" />
+          <EntitySet Name="GalleryImages" EntityType="Model.GalleryImage" />
+          <EntitySet Name="ContactUs" EntityType="Model.ContactU" />
+          <EntitySet Name="CrashPrices" EntityType="Model.CrashPrice" />
+        </EntityContainer>
+        <EntityType Name="GalleryImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="image_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="statuss" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ContactU">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="messag" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="statuss" Type="Boolean" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CrashPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="messag" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="url_image_1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="url_image_2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="url_image_3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="statuss" Type="Boolean" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AfterBeforeImages">
+            <EntityTypeMapping TypeName="Model.AfterBeforeImage">
+              <MappingFragment StoreEntitySet="AfterBeforeImage">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="url_picture_before" ColumnName="url_picture_before" />
+                <ScalarProperty Name="url_picture_after" ColumnName="url_picture_after" />
+                <ScalarProperty Name="statuss" ColumnName="statuss" />
+                <ScalarProperty Name="first_title" ColumnName="first_title" />
+                <ScalarProperty Name="secoundry_title" ColumnName="secoundry_title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CursoleArticles">
+            <EntityTypeMapping TypeName="Model.CursoleArticle">
+              <MappingFragment StoreEntitySet="CursoleArticles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="subtitle" ColumnName="subtitle" />
+                <ScalarProperty Name="statuss" ColumnName="statuss" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GalleryImages">
+            <EntityTypeMapping TypeName="Model.GalleryImage">
+              <MappingFragment StoreEntitySet="GalleryImage">
+                <ScalarProperty Name="statuss" ColumnName="statuss" />
+                <ScalarProperty Name="image_url" ColumnName="image_url" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUs">
+            <EntityTypeMapping TypeName="Model.ContactU">
+              <MappingFragment StoreEntitySet="ContactUs">
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="statuss" ColumnName="statuss" />
+                <ScalarProperty Name="messag" ColumnName="messag" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrashPrices">
+            <EntityTypeMapping TypeName="Model.CrashPrice">
+              <MappingFragment StoreEntitySet="CrashPrice">
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="statuss" ColumnName="statuss" />
+                <ScalarProperty Name="url_image_3" ColumnName="url_image_3" />
+                <ScalarProperty Name="url_image_2" ColumnName="url_image_2" />
+                <ScalarProperty Name="url_image_1" ColumnName="url_image_1" />
+                <ScalarProperty Name="messag" ColumnName="messag" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
