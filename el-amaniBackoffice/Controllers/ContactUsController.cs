@@ -19,11 +19,13 @@ namespace el_amaniBackoffice.Controllers
         {
             return View(db.ContactUs.OrderBy(s=>s.statuss).ThenByDescending(s=>s.created_date).ToList());
         }
-
+        //commett
         // GET: ContactUs/Details/5
         public ActionResult Details(int? id)
         {
+           
             if (id == null)
+           
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
